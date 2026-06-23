@@ -2,7 +2,7 @@
 2	471	8008584921752965	CMakeFiles/hello_window.dir/src/main.cpp.obj	e3f9988f6680b1c9
 471	627	8008584926427190	hello_window.exe	398286b65822c91d
 10	305	7979150411372618	CMakeFiles/hello_window.dir/src/glad.c.obj	6cf2331e8020b3ba
-2	197	8021511738901161	build.ninja	8d5f7b1f3e57895a
+2	197	8038785148844043	build.ninja	8d5f7b1f3e57895a
 48	538	8008579579085431	CMakeFiles/hello_window.dir/src/triangle_mesh.cpp.obj	7162e4e5cb97c84c
 58	522	8008579579197969	CMakeFiles/hello_window.dir/src/material.cpp.obj	987dc7cbd3d2b0b3
 36	566	8008579578972643	CMakeFiles/hello_window.dir/src/config.cpp.obj	97203f55637b13c3
