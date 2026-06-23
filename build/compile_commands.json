@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
+  "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\config.cpp.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\config.cpp",
+  "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\config.cpp",
+  "output": "CMakeFiles\\hello_window.dir\\src\\config.cpp.obj"
+},
+{
+  "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
+  "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\main.cpp.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\main.cpp",
+  "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\main.cpp",
+  "output": "CMakeFiles\\hello_window.dir\\src\\main.cpp.obj"
+},
+{
+  "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
+  "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\glad.c.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\glad.c",
+  "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\glad.c",
+  "output": "CMakeFiles\\hello_window.dir\\src\\glad.c.obj"
+},
+{
+  "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
+  "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\triangle_mesh.cpp.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\triangle_mesh.cpp",
+  "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\triangle_mesh.cpp",
+  "output": "CMakeFiles\\hello_window.dir\\src\\triangle_mesh.cpp.obj"
+},
+{
+  "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
+  "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\material.cpp.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\material.cpp",
+  "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\material.cpp",
+  "output": "CMakeFiles\\hello_window.dir\\src\\material.cpp.obj"
+}
+]
