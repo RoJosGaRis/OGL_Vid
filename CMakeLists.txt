@@ -14,6 +14,7 @@ add_executable(hello_window
   src/triangle_mesh.cpp
   src/material.cpp
   src/systems/render_system.h
+  src/view/shader.cpp
 )
 
 target_include_directories(hello_window PRIVATE dependencies)
