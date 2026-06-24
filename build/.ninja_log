@@ -1,19 +1,14 @@
 # ninja log v7
-28	919	8038797757827541	CMakeFiles/hello_window.dir/src/main.cpp.obj	e3f9988f6680b1c9
-471	627	8008584926427190	hello_window.exe	398286b65822c91d
+43	478	8038805178626606	CMakeFiles/hello_window.dir/src/main.cpp.obj	e3f9988f6680b1c9
+479	621	8038805182974192	hello_window.exe	c4bc23a645fee2b7
 33	906	8038797757827541	CMakeFiles/hello_window.dir/src/glad.c.obj	6cf2331e8020b3ba
-107	834	8038801191957792	build.ninja	8d5f7b1f3e57895a
+107	834	8039647603412474	build.ninja	8d5f7b1f3e57895a
 42	925	8038797757913604	CMakeFiles/hello_window.dir/src/triangle_mesh.cpp.obj	7162e4e5cb97c84c
 53	904	8038797758089852	CMakeFiles/hello_window.dir/src/material.cpp.obj	987dc7cbd3d2b0b3
 21	952	8038797757744229	CMakeFiles/hello_window.dir/src/config.cpp.obj	97203f55637b13c3
 121	770	8008553853404936	CMakeFiles/hello_window.dir/src/linear_algebra.cpp.obj	e72b8869e0501b18
 2	443	8038801902414850	CMakeFiles/hello_window.dir/src/view/shader.cpp.obj	494110f7936b732b
-444	677	8038801906813572	hello_window.exe	c4bc23a645fee2b7
-2	439	8038803540444199	CMakeFiles/hello_window.dir/src/main.cpp.obj	e3f9988f6680b1c9
-439	612	8038803544823578	hello_window.exe	c4bc23a645fee2b7
-37	461	8038804437227998	CMakeFiles/hello_window.dir/src/main.cpp.obj	e3f9988f6680b1c9
-461	608	8038804441467836	hello_window.exe	c4bc23a645fee2b7
-46	476	8038804932253081	CMakeFiles/hello_window.dir/src/main.cpp.obj	e3f9988f6680b1c9
-476	647	8038804936516648	hello_window.exe	c4bc23a645fee2b7
-43	478	8038805178626606	CMakeFiles/hello_window.dir/src/main.cpp.obj	e3f9988f6680b1c9
-479	621	8038805182974192	hello_window.exe	c4bc23a645fee2b7
+61	588	8039647627376977	CMakeFiles/hello_window.dir/src/controller/app.cpp.obj	9b1890c127f23699
+50	823	8039647627255782	CMakeFiles/hello_window.dir/src/systems/motion_system.cpp.obj	3f1e757f6ad70e54
+41	830	8039647627127584	CMakeFiles/hello_window.dir/src/systems/render_system.cpp.obj	5efa7056d4be317f
+830	1116	8039647635024892	hello_window.exe	d7a091ff28599331

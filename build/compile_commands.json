@@ -31,8 +31,26 @@
 },
 {
   "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
+  "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\systems\\render_system.cpp.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\systems\\render_system.cpp",
+  "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\systems\\render_system.cpp",
+  "output": "CMakeFiles\\hello_window.dir\\src\\systems\\render_system.cpp.obj"
+},
+{
+  "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
+  "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\systems\\motion_system.cpp.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\systems\\motion_system.cpp",
+  "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\systems\\motion_system.cpp",
+  "output": "CMakeFiles\\hello_window.dir\\src\\systems\\motion_system.cpp.obj"
+},
+{
+  "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
   "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\view\\shader.cpp.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\view\\shader.cpp",
   "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\view\\shader.cpp",
   "output": "CMakeFiles\\hello_window.dir\\src\\view\\shader.cpp.obj"
+},
+{
+  "directory": "C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build",
+  "command": "\"C:\\PROGRA~1\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IC:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\dependencies /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\hello_window.dir\\src\\controller\\app.cpp.obj /FdCMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\controller\\app.cpp",
+  "file": "C:\\Users\\rober\\Personal\\GameDev\\OpenGL\\Projects\\OGL_Vid\\src\\controller\\app.cpp",
+  "output": "CMakeFiles\\hello_window.dir\\src\\controller\\app.cpp.obj"
 }
 ]

@@ -89,11 +89,35 @@ build CMakeFiles\hello_window.dir\src\material.cpp.obj: CXX_COMPILER__hello_wind
   TARGET_COMPILE_PDB = CMakeFiles\hello_window.dir\
   TARGET_PDB = hello_window.pdb
 
+build CMakeFiles\hello_window.dir\src\systems\render_system.cpp.obj: CXX_COMPILER__hello_window_unscanned_Debug C$:\Users\rober\Personal\GameDev\OpenGL\Projects\OGL_Vid\src\systems\render_system.cpp || cmake_object_order_depends_target_hello_window
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi
+  INCLUDES = -IC:\Users\rober\Personal\GameDev\OpenGL\Projects\OGL_Vid\dependencies
+  OBJECT_DIR = CMakeFiles\hello_window.dir
+  OBJECT_FILE_DIR = CMakeFiles\hello_window.dir\src\systems
+  TARGET_COMPILE_PDB = CMakeFiles\hello_window.dir\
+  TARGET_PDB = hello_window.pdb
+
+build CMakeFiles\hello_window.dir\src\systems\motion_system.cpp.obj: CXX_COMPILER__hello_window_unscanned_Debug C$:\Users\rober\Personal\GameDev\OpenGL\Projects\OGL_Vid\src\systems\motion_system.cpp || cmake_object_order_depends_target_hello_window
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi
+  INCLUDES = -IC:\Users\rober\Personal\GameDev\OpenGL\Projects\OGL_Vid\dependencies
+  OBJECT_DIR = CMakeFiles\hello_window.dir
+  OBJECT_FILE_DIR = CMakeFiles\hello_window.dir\src\systems
+  TARGET_COMPILE_PDB = CMakeFiles\hello_window.dir\
+  TARGET_PDB = hello_window.pdb
+
 build CMakeFiles\hello_window.dir\src\view\shader.cpp.obj: CXX_COMPILER__hello_window_unscanned_Debug C$:\Users\rober\Personal\GameDev\OpenGL\Projects\OGL_Vid\src\view\shader.cpp || cmake_object_order_depends_target_hello_window
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi
   INCLUDES = -IC:\Users\rober\Personal\GameDev\OpenGL\Projects\OGL_Vid\dependencies
   OBJECT_DIR = CMakeFiles\hello_window.dir
   OBJECT_FILE_DIR = CMakeFiles\hello_window.dir\src\view
+  TARGET_COMPILE_PDB = CMakeFiles\hello_window.dir\
+  TARGET_PDB = hello_window.pdb
+
+build CMakeFiles\hello_window.dir\src\controller\app.cpp.obj: CXX_COMPILER__hello_window_unscanned_Debug C$:\Users\rober\Personal\GameDev\OpenGL\Projects\OGL_Vid\src\controller\app.cpp || cmake_object_order_depends_target_hello_window
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi
+  INCLUDES = -IC:\Users\rober\Personal\GameDev\OpenGL\Projects\OGL_Vid\dependencies
+  OBJECT_DIR = CMakeFiles\hello_window.dir
+  OBJECT_FILE_DIR = CMakeFiles\hello_window.dir\src\controller
   TARGET_COMPILE_PDB = CMakeFiles\hello_window.dir\
   TARGET_PDB = hello_window.pdb
 
@@ -105,7 +129,7 @@ build CMakeFiles\hello_window.dir\src\view\shader.cpp.obj: CXX_COMPILER__hello_w
 #############################################
 # Link the executable hello_window.exe
 
-build hello_window.exe: CXX_EXECUTABLE_LINKER__hello_window_Debug CMakeFiles\hello_window.dir\src\config.cpp.obj CMakeFiles\hello_window.dir\src\main.cpp.obj CMakeFiles\hello_window.dir\src\glad.c.obj CMakeFiles\hello_window.dir\src\triangle_mesh.cpp.obj CMakeFiles\hello_window.dir\src\material.cpp.obj CMakeFiles\hello_window.dir\src\view\shader.cpp.obj | C$:\Users\rober\Personal\GameDev\OpenGL\ExternalLibs\GLFW\lib-vc2022\glfw3.lib
+build hello_window.exe: CXX_EXECUTABLE_LINKER__hello_window_Debug CMakeFiles\hello_window.dir\src\config.cpp.obj CMakeFiles\hello_window.dir\src\main.cpp.obj CMakeFiles\hello_window.dir\src\glad.c.obj CMakeFiles\hello_window.dir\src\triangle_mesh.cpp.obj CMakeFiles\hello_window.dir\src\material.cpp.obj CMakeFiles\hello_window.dir\src\systems\render_system.cpp.obj CMakeFiles\hello_window.dir\src\systems\motion_system.cpp.obj CMakeFiles\hello_window.dir\src\view\shader.cpp.obj CMakeFiles\hello_window.dir\src\controller\app.cpp.obj | C$:\Users\rober\Personal\GameDev\OpenGL\ExternalLibs\GLFW\lib-vc2022\glfw3.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = C:\Users\rober\Personal\GameDev\OpenGL\ExternalLibs\GLFW\lib-vc2022\glfw3.lib  opengl32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
