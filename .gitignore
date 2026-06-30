@@ -28,7 +28,7 @@ xcuserdata/
  
 # Generated files
 /web-app/WEB-INF
-build/
+build
 *.[oa]
 *.pyc
  
