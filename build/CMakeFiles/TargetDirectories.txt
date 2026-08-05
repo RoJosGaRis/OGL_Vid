@@ -1,3 +1,0 @@
-C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build/CMakeFiles/hello_window.dir
-C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build/CMakeFiles/edit_cache.dir
-C:/Users/rober/Personal/GameDev/OpenGL/Projects/OGL_Vid/build/CMakeFiles/rebuild_cache.dir
