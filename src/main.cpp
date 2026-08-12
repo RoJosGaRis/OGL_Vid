@@ -1,6 +1,4 @@
 #include "config.h"
-#include "triangle_mesh.h"
-#include "material.h"
 
 
 unsigned int make_module(const std::string& filepath, unsigned int module_type);
@@ -29,10 +27,6 @@ int main() {
   int w, h;
   glfwGetFramebufferSize(window, &w, &h);
   glViewport(0,0, w, h);
-
-  TriangleMesh* triangle = new TriangleMesh;
-  Material* material = new Material("img/lol2-img.jpg");
-  Material* mask = new Material("img/vignette-img.jpg");
 
   unsigned int shader = make_shader(
     "src/shaders/vertex.txt",
@@ -72,16 +66,10 @@ int main() {
 
     glClear(GL_COLOR_BUFFER_BIT);
     glUseProgram(shader);
-    material->use(0);
-    mask->use(1);
-    triangle->draw();
     glfwSwapBuffers(window);
   }
 
   glDeleteProgram(shader);
-  delete triangle;
-  delete material;
-  delete mask;
 
   glfwTerminate();
 
