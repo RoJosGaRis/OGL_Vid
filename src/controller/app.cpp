@@ -92,5 +92,22 @@ unsigned int App::make_cube_mesh(glm::vec3 size) {
 }
 
 unsigned int App::make_texture(const char* filename) {
-  
+  int width, height, channels;
+  stbi_set_flip_vertically_on_load(true);
+  unsigned char* data = stbi_load(filename, &width, &height, &channels, STBI_rgb_alpha);
+
+  unsigned int texture;
+  glGenTextures(1, &texture);
+  textures.push_back(texture);
+  glBindTexture(GL_TEXTURE_2D, texture);
+
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+  stbi_image_free(data);
+
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+  return texture;
 }
