@@ -1,80 +1,45 @@
 #include "config.h"
+#include "controller/app.h"
 
-
-unsigned int make_module(const std::string& filepath, unsigned int module_type);
-unsigned int make_shader(const std::string& vertex_filepath, const std::string& fragment_filepath);
+#include "components/camera_component.h"
+#include "components/physics_component.h"
+#include "components/render_component.h"
+#include "components/transform_component.h"
 
 int main() {
+  App* app = new App();
+
+  unsigned int cubeEntity = app->make_entity();
+  TransformComponent transform;
+  transform.position= {3.0f, 0.0f, 0.25f};
+  transform.eulers = {0.0f, 0.0f, 0.0f};
+
+  app->transformComponents[cubeEntity] = transform;
+
+  PhysicsComponent physics;
+  physics.velocity = {0.0f, 0.0f, 0.0f};
+  physics.eulerVelocity = {0.0f, 0.0f, 10.0f};
+  app->physicsComponents[cubeEntity] = physics;
+
+  RenderComponent render;
+  render.mesh = app->make_cube_mesh({0.25f, 0.25f, 0.25f});
+  render.material = app->make_texture("../img/lol2-img.jpg");
+  app->renderComponents[cubeEntity] = render;
   
-  GLFWwindow* window;
+  unsigned int cameraEntity = app->make_entity();
+  transform.position = {0.0f, 0.0f, 1.0f};
+  transform.eulers = {0.0f, 0.0f, 0.0f};
+  app->transformComponents[cameraEntity] = transform;
 
-  if (!glfwInit()) {
-    std::cout << "GLFW couldn't start" << std::endl;
-    return -1;
-  }
+  CameraComponent* camera = new CameraComponent();
+  app->cameraComponent = camera;
+  app->cameraID = cameraEntity;
 
-  window = glfwCreateWindow(640, 480, "My Window", NULL, NULL);
-  glfwMakeContextCurrent(window);
+  app->set_up_opengl();
+  app->make_systems();
 
-  if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-  {
-    glfwTerminate();
-    return -1;
-  }
+  app->run();
 
-  glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-
-  int w, h;
-  glfwGetFramebufferSize(window, &w, &h);
-  glViewport(0,0, w, h);
-
-  unsigned int shader = make_shader(
-    "src/shaders/vertex.txt",
-    "src/shaders/fragment.txt"
-  );
-
-  glUseProgram(shader);
-  glUniform1i(glGetUniformLocation(shader, "material"), 0);
-  glUniform1i(glGetUniformLocation(shader, "mask"), 1);
-
-  glm::vec3 quad_position = {0.1f, -0.2f, 0.0f};
-  glm::vec3 camera_position = {-5.0f, 0.0f, 3.0f};
-  glm::vec3 camera_target = {0.0f, 0.0f, 0.0f};
-  glm::vec3 up = {0.0f, 0.0f, 1.0f};
-
-  unsigned int model_location = glGetUniformLocation(shader, "model");
-  unsigned int view_location = glGetUniformLocation(shader, "view");
-  unsigned int proj_location = glGetUniformLocation(shader, "projection");
-
-  glm::mat4 view = glm::lookAt(camera_position, camera_target, up);
-  glUniformMatrix4fv(view_location, 1, GL_FALSE, glm::value_ptr(view));
-
-  glm::mat4 projection = glm::perspective(45.0f, 640.0f/480.0f, 0.1f, 10.0f);
-  glUniformMatrix4fv(proj_location, 1, GL_FALSE, glm::value_ptr(projection));
-
-  glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-  while(!glfwWindowShouldClose(window) )
-  {
-    glfwPollEvents();
-
-    glm::mat4 model = glm::mat4(1.0f);
-    model = glm::translate(model, quad_position);
-    model = glm::rotate(model, (float) glfwGetTime(), {0.0f, 0.0f, 1.0f});
-    glUniformMatrix4fv(model_location, 1, GL_FALSE, glm::value_ptr(model));
-
-    glClear(GL_COLOR_BUFFER_BIT);
-    glUseProgram(shader);
-    glfwSwapBuffers(window);
-  }
-
-  glDeleteProgram(shader);
-
-  glfwTerminate();
-
+  delete app;
   return 0;
 }
-
-
-

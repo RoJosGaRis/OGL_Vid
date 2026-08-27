@@ -131,7 +131,7 @@ void App::set_up_glfw() {
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_TRUE);
 
-  window = glfwCreateWindow(640, 480, "Hello Window!", NULL, NULL);
+  window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Hello Window!", NULL, NULL);
   glfwMakeContextCurrent(window);
   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 
@@ -161,7 +161,7 @@ void App::set_up_opengl() {
 
   glUseProgram(shader);
   unsigned int projLocation = glGetUniformLocation(shader, "projection");
-  glm::mat4 projection = glm::perspective(45.0f, 640.0f / 480.0f, 0.1f, 10.0f);
+  glm::mat4 projection = glm::perspective(45.0f, WINDOW_WIDTH * 1.0f / WINDOW_HEIGHT * 1.0f, 0.1f, 10.0f);
   glUniformMatrix4fv(projLocation, 1, GL_FALSE, glm::value_ptr(projection));
 
 }

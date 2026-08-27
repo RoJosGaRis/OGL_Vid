@@ -18,7 +18,7 @@ void RenderSystem::update(
     TransformComponent &transform = transformComponents[entity.first];
     glm::mat4 model = glm::mat4(1.0f);
 
-    model = glm::translate(model, transform.positon);
+    model = glm::translate(model, transform.position);
     model = glm::rotate(
       model, glm::radians(transform.eulers.z),
       { 0.0f, 0.0f, 1.0f }

@@ -10,7 +10,7 @@ CameraSystem::CameraSystem(unsigned int shader, GLFWwindow* window)
 
 bool CameraSystem::update (std::unordered_map<unsigned int, TransformComponent> &transformComponents, unsigned int cameraID, CameraComponent& cameraComponent, float dt)
 {
-  glm::vec3& pos = transformComponents[cameraID].positon;
+  glm::vec3& pos = transformComponents[cameraID].position;
   glm::vec3& eulers = transformComponents[cameraID].eulers;
 
   float theta = glm::radians(eulers.z);
@@ -46,11 +46,15 @@ bool CameraSystem::update (std::unordered_map<unsigned int, TransformComponent> 
   if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
     dPos.y += 1.0f;
   }
+  if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
+    dPos.z += 1.0f;
+  }
 
   if (glm::length(dPos) > 0.1f) {
     dPos = glm::normalize(dPos);
-    pos += 0.1f * dPos.x * forwards;
-    pos += 0.1f * dPos.y * right;
+    pos += dt * dPos.x * forwards;
+    pos += dt * dPos.y * right;
+    pos += dt * dPos.z * up;
   }
 
   if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
@@ -60,11 +64,11 @@ bool CameraSystem::update (std::unordered_map<unsigned int, TransformComponent> 
   glm::vec3 dEulers = {0.0f, 0.0f, 0.0f};
   double mouse_x, mouse_y;
   glfwGetCursorPos(window, &mouse_x, &mouse_y);
-  glfwSetCursorPos(window, 320.0, 240.0);
+  glfwSetCursorPos(window, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
   glfwPollEvents();
 
-  dEulers.z = -0.01f * static_cast<float>(mouse_x - 320.0);
-  dEulers.y = -0.01f * static_cast<float>(mouse_y - 240.0);
+  dEulers.z = -0.01f * static_cast<float>(mouse_x - WINDOW_WIDTH / 2);
+  dEulers.y = -0.01f * static_cast<float>(mouse_y - WINDOW_HEIGHT / 2);
 
   eulers.y = fminf(89.0, fmaxf(-89.0f, eulers.y + dEulers.y));
 
