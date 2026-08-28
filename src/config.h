@@ -15,3 +15,5 @@
 #include <unordered_map>
 
 #include "constants.h"
+
+std::vector<std::string> split(std::string str, std::string delimiter);
