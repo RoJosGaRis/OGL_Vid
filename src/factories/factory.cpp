@@ -36,61 +36,60 @@ Factory::~Factory() {
     physics.eulerVelocity = eulerVelocity;
     physicsComponents[entities_made] = physics;
 
-    RenderComponent render;
-    render.mesh = make_cube_mesh({0.25f, 0.25f, 0.25f});
+    RenderComponent render = make_cube_mesh({0.25f, 0.25f, 0.25f});
     render.material = make_texture("../img/lol2-img.jpg");
     renderComponents[entities_made] = render;
 
     entities_made++;
   }
 
-  unsigned int Factory::make_cube_mesh(glm::vec3 size) {
+  RenderComponent int Factory::make_cube_mesh(glm::vec3 size) {
     float l = size.x;
     float w = size.y;
     float h = size.z;
 
     std::vector<float> vertices = {
-        l,  w, -h, 1.0f, 1.0f,
-        l, -w, -h, 1.0f, 0.0f,
-        -l, -w, -h, 0.0f, 0.0f,
-        -l, -w, -h, 0.0f, 0.0f,
-        -l,  w, -h, 0.0f, 1.0f,
-        l,  w, -h, 1.0f, 1.0f,
+        l,  w, -h, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f,
+        l, -w, -h, 1.0f, 0.0f,  0.0f,  0.0f, -1.0f,
+      -l, -w, -h, 0.0f, 0.0f,  0.0f,  0.0f, -1.0f,
+      -l, -w, -h, 0.0f, 0.0f,  0.0f,  0.0f, -1.0f,
+      -l,  w, -h, 0.0f, 1.0f,  0.0f,  0.0f, -1.0f,
+        l,  w, -h, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f,
 
-        -l, -w,  h, 0.0f, 0.0f,
-        l, -w,  h, 1.0f, 0.0f,
-        l,  w,  h, 1.0f, 1.0f,
-        l,  w,  h, 1.0f, 1.0f,
-        -l,  w,  h, 0.0f, 1.0f,
-        -l, -w,  h, 0.0f, 0.0f,
+      -l, -w,  h, 0.0f, 0.0f,  0.0f,  0.0f,  1.0f,
+        l, -w,  h, 1.0f, 0.0f,  0.0f,  0.0f,  1.0f,
+        l,  w,  h, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f,
+        l,  w,  h, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f,
+      -l,  w,  h, 0.0f, 1.0f,  0.0f,  0.0f,  1.0f,
+      -l, -w,  h, 0.0f, 0.0f,  0.0f,  0.0f,  1.0f,
 
-        -l,  w,  h, 1.0f, 1.0f,
-        -l,  w, -h, 1.0f, 0.0f,
-        -l, -w, -h, 0.0f, 0.0f,
-        -l, -w, -h, 0.0f, 0.0f,
-        -l, -w,  h, 0.0f, 1.0f,
-        -l,  w,  h, 1.0f, 1.0f,
+      -l,  w,  h, 1.0f, 1.0f, -1.0f,  0.0f,  0.0f,
+      -l,  w, -h, 1.0f, 0.0f, -1.0f,  0.0f,  0.0f,
+      -l, -w, -h, 0.0f, 0.0f, -1.0f,  0.0f,  0.0f,
+      -l, -w, -h, 0.0f, 0.0f, -1.0f,  0.0f,  0.0f,
+      -l, -w,  h, 0.0f, 1.0f, -1.0f,  0.0f,  0.0f,
+      -l,  w,  h, 1.0f, 1.0f, -1.0f,  0.0f,  0.0f,
 
-        l, -w, -h, 0.0f, 0.0f,
-        l,  w, -h, 1.0f, 0.0f,
-        l,  w,  h, 1.0f, 1.0f,
-        l,  w,  h, 1.0f, 1.0f,
-        l, -w,  h, 0.0f, 1.0f,
-        l, -w, -h, 0.0f, 0.0f,
+        l, -w, -h, 0.0f, 0.0f,  1.0f,  0.0f,  0.0f,
+        l,  w, -h, 1.0f, 0.0f,  1.0f,  0.0f,  0.0f,
+        l,  w,  h, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f,
+        l,  w,  h, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f,
+        l, -w,  h, 0.0f, 1.0f,  1.0f,  0.0f,  0.0f,
+        l, -w, -h, 0.0f, 0.0f,  1.0f,  0.0f,  0.0f,
 
-        -l, -w, -h, 0.0f, 0.0f,
-        l, -w, -h, 1.0f, 0.0f,
-        l, -w,  h, 1.0f, 1.0f,  
-        l, -w,  h, 1.0f, 1.0f,
-        -l, -w,  h, 0.0f, 1.0f,
-        -l, -w, -h, 0.0f, 0.0f,
+      -l, -w, -h, 0.0f, 0.0f,  0.0f, -1.0f,  0.0f,
+        l, -w, -h, 1.0f, 0.0f,  0.0f, -1.0f,  0.0f,
+        l, -w,  h, 1.0f, 1.0f,  0.0f, -1.0f,  0.0f,
+        l, -w,  h, 1.0f, 1.0f,  0.0f, -1.0f,  0.0f,
+      -l, -w,  h, 0.0f, 1.0f,  0.0f, -1.0f,  0.0f,
+      -l, -w, -h, 0.0f, 0.0f,  0.0f, -1.0f,  0.0f,
 
-        l,  w,  h, 1.0f, 1.0f,
-        l,  w, -h, 1.0f, 0.0f,
-        -l,  w, -h, 0.0f, 0.0f, 
-        -l,  w, -h, 0.0f, 0.0f,
-        -l,  w,  h, 0.0f, 1.0f,
-        l,  w,  h, 1.0f, 1.0f
+        l,  w,  h, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f,
+        l,  w, -h, 1.0f, 0.0f,  0.0f,  1.0f,  0.0f,
+      -l,  w, -h, 0.0f, 0.0f,  0.0f,  1.0f,  0.0f,
+      -l,  w, -h, 0.0f, 0.0f,  0.0f,  1.0f,  0.0f,
+      -l,  w,  h, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f,
+        l,  w,  h, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f
     };
 
     unsigned int VAO;
@@ -104,13 +103,20 @@ Factory::~Factory() {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 20, (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 32, (void*)0);
     glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 20, (void*)12);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 32, (void*)12);
     glEnableVertexAttribArray(1);
+    
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 32, (void*)20);
+    glEnableVertexAttribArray(2);
 
-    return VAO;
+    RenderComponent record;
+    record.VAO = VAO;
+    record.vertexCount = 36;
+    return record;
+    
   }
 
   unsigned int Factory::make_texture(const char* filename) {
