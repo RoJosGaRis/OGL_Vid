@@ -37,7 +37,7 @@ Factory::~Factory() {
     physicsComponents[entities_made] = physics;
 
     RenderComponent render = make_cube_mesh({0.25f, 0.25f, 0.25f});
-    render.material = make_texture("../img/lol2-img.jpg");
+    render.material = make_texture("img/lol2-img.jpg");
     renderComponents[entities_made] = render;
 
     entities_made++;
@@ -136,6 +136,7 @@ Factory::~Factory() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glGenerateMipmap(GL_TEXTURE_2D);
 
     return texture;
   }
