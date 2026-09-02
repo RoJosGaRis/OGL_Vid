@@ -27,8 +27,8 @@ void RenderSystem::update(
     glUniformMatrix4fv(modelLocation, 1, GL_FALSE, glm::value_ptr(model));
 
     glBindTexture(GL_TEXTURE_2D, entity.second.material);
-    glBindVertexArray(entity.second.mesh);
-    glDrawArrays(GL_TRIANGLES, 0, 36);
+    glBindVertexArray(entity.second.VAO);
+    glDrawArrays(GL_TRIANGLES, 0, entity.second.vertexCount);
 
   }
 

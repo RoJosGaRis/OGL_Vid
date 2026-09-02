@@ -43,7 +43,7 @@ Factory::~Factory() {
     entities_made++;
   }
 
-  RenderComponent int Factory::make_cube_mesh(glm::vec3 size) {
+  RenderComponent Factory::make_cube_mesh(glm::vec3 size) {
     float l = size.x;
     float w = size.y;
     float h = size.z;
