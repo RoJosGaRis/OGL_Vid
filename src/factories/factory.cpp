@@ -186,6 +186,11 @@ Factory::~Factory() {
     }
 
     file.close();
+
+    std::cout << "loaded some data" << std::endl;
+    std::cout << "\tvertices: " << v.size() << std::endl;
+    std::cout << "\ttex coords: " << vt.size() << std::endl;
+    std::cout << "\tnormals: " << vn.size() << std::endl;
   }
 
   unsigned int Factory::make_texture(const char* filename) {
