@@ -26,6 +26,7 @@ int main() {
 
   app->run();
 
+  delete factory;
   delete app;
   return 0;
 }
