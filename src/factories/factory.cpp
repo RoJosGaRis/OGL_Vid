@@ -178,10 +178,10 @@ Factory::~Factory() {
         v.push_back(read_vec3(words));
       }
       else if (!words[0].compare("vt")) {
-        v.push_back(read_vec2(words));       
+        vt.push_back(read_vec2(words));       
       }
       else if (!words[0].compare("vn")) {
-        v.push_back(read_vec3(words));
+        vn.push_back(read_vec3(words));
       }
     }
 
