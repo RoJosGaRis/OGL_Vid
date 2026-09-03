@@ -42,6 +42,20 @@ Factory::~Factory() {
 
     entities_made++;
   }
+  void Factory::make_obj(glm::vec3 position, glm::vec3 eulers){
+
+    TransformComponent transform;
+    transform.position= position;
+    transform.eulers = eulers;
+
+    transformComponents[entities_made] = transform;
+
+    make_obj_mesh("models/girl.obj");
+    // render.material = make_texture("img/lol2-img.jpg");
+    // renderComponents[entities_made] = render;
+
+    entities_made++;
+  }
 
   RenderComponent Factory::make_cube_mesh(glm::vec3 size) {
     float l = size.x;
@@ -119,6 +133,61 @@ Factory::~Factory() {
     
   }
 
+  void Factory::make_obj_mesh(const char* filename) {
+    std::vector<glm::vec3> v;
+    std::vector<glm::vec2> vt;
+    std::vector<glm::vec3> vn;
+
+    size_t vertexCount = 0;
+    size_t texcoordCount = 0;
+    size_t normalCount = 0;
+
+    std::string line;
+    std::vector<std::string> words;
+
+    std::ifstream file;
+    file.open(filename);
+
+    while (std::getline(file, line)) {
+      words = split(line, " ");
+
+      if (!words[0].compare("v")) {
+        ++vertexCount;
+      }
+      else if (!words[0].compare("vt")) {
+        ++texcoordCount;
+        
+      }
+      else if (!words[0].compare("vn")) {
+        ++normalCount;
+      }
+    }
+
+    file.close();
+
+    v.reserve(vertexCount);
+    vt.reserve(texcoordCount);
+    vn.reserve(normalCount);
+
+    file.open(filename);
+
+    while (std::getline(file, line)) {
+      words = split(line, " ");
+
+      if (!words[0].compare("v")) {
+        v.push_back(read_vec3(words));
+      }
+      else if (!words[0].compare("vt")) {
+        v.push_back(read_vec2(words));       
+      }
+      else if (!words[0].compare("vn")) {
+        v.push_back(read_vec3(words));
+      }
+    }
+
+    file.close();
+  }
+
   unsigned int Factory::make_texture(const char* filename) {
     int width, height, channels;
     stbi_set_flip_vertically_on_load(true);
@@ -139,4 +208,14 @@ Factory::~Factory() {
     glGenerateMipmap(GL_TEXTURE_2D);
 
     return texture;
+  }
+
+  glm::vec2 Factory::read_vec2(std::vector<std::string> &words)
+  {
+    return glm::vec2(std::stof(words[1]), std::stof(words[2]));
+  }
+  
+  glm::vec3 Factory::read_vec3(std::vector<std::string> &words)
+  {
+    return glm::vec3(std::stof(words[1]), std::stof(words[2]), std::stof(words[3]));
   }
