@@ -6,9 +6,6 @@ App::App() {
 }
 
 App::~App() {
-  glDeleteBuffers(VBOs.size(), VBOs.data());
-  glDeleteVertexArrays(VAOs.size(), VAOs.data());
-  glDeleteTextures(textures.size(), textures.data());
   glDeleteProgram(shader);
 
   delete motionSystem;
@@ -17,14 +14,6 @@ App::~App() {
 
   glfwTerminate();
 }
-
-unsigned int App::make_entity() {
-  return entity_count++;
-}
-
-
-
-
 
 void App::run() {
   while (!glfwWindowShouldClose(window)) {

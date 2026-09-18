@@ -17,7 +17,6 @@ class App {
     App();
     ~App();
     void run();
-    unsigned int make_entity();
     unsigned int make_cube_mesh(glm::vec3 size);
     unsigned int make_texture(const char* filename);
     void set_up_opengl();

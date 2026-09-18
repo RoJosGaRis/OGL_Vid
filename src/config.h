@@ -17,3 +17,9 @@
 #include "constants.h"
 
 std::vector<std::string> split(std::string str, std::string delimiter);
+
+enum class ObjectType {
+  eBox,
+  eGirl,
+  eRevy
+};

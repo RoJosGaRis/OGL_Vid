@@ -6,6 +6,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 add_executable(hello_window 
   src/config.h
   src/config.cpp
@@ -13,6 +17,7 @@ add_executable(hello_window
   src/glad.c
   src/constants.cpp
   src/factories/factory.cpp
+  src/factories/mesh_factory.cpp
   src/systems/render_system.cpp
   src/systems/motion_system.cpp
   src/systems/camera_system.cpp
