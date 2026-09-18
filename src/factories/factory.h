@@ -35,6 +35,6 @@ class Factory {
     void make_obj_mesh(const char* filename);
     unsigned int make_texture(const char* filename);
 
-    glm::vec2 read_vec2(std::vector<std::string> &words);
-    glm::vec3 read_vec3(std::vector<std::string> &words);
+    glm::vec2 read_vec2(std::vector<std::string> words);
+    glm::vec3 read_vec3(std::vector<std::string> words);
   };

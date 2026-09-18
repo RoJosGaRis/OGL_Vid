@@ -37,7 +37,7 @@ Factory::~Factory() {
     physicsComponents[entities_made] = physics;
 
     RenderComponent render = make_cube_mesh({0.25f, 0.25f, 0.25f});
-    render.material = make_texture("img/lol2-img.jpg");
+    render.material = make_texture("img/paper.jpg");
     renderComponents[entities_made] = render;
 
     entities_made++;
@@ -51,10 +51,10 @@ Factory::~Factory() {
     transformComponents[entities_made] = transform;
 
     make_obj_mesh("models/girl.obj");
-    // render.material = make_texture("img/lol2-img.jpg");
+    // render.material = make_texture("img/stargirl.png");
     // renderComponents[entities_made] = render;
 
-    entities_made++;
+    // entities_made++;
   }
 
   RenderComponent Factory::make_cube_mesh(glm::vec3 size) {
@@ -134,23 +134,24 @@ Factory::~Factory() {
   }
 
   void Factory::make_obj_mesh(const char* filename) {
+
     std::vector<glm::vec3> v;
     std::vector<glm::vec2> vt;
     std::vector<glm::vec3> vn;
-
+    
     size_t vertexCount = 0;
     size_t texcoordCount = 0;
     size_t normalCount = 0;
-
+    
     std::string line;
     std::vector<std::string> words;
-
+    
     std::ifstream file;
     file.open(filename);
-
+    
     while (std::getline(file, line)) {
       words = split(line, " ");
-
+      
       if (!words[0].compare("v")) {
         ++vertexCount;
       }
@@ -162,18 +163,16 @@ Factory::~Factory() {
         ++normalCount;
       }
     }
-
     file.close();
-
+    
     v.reserve(vertexCount);
     vt.reserve(texcoordCount);
     vn.reserve(normalCount);
-
+    
     file.open(filename);
-
+    
     while (std::getline(file, line)) {
       words = split(line, " ");
-
       if (!words[0].compare("v")) {
         v.push_back(read_vec3(words));
       }
@@ -184,9 +183,9 @@ Factory::~Factory() {
         vn.push_back(read_vec3(words));
       }
     }
-
+    
     file.close();
-
+    
     std::cout << "loaded some data" << std::endl;
     std::cout << "\tvertices: " << v.size() << std::endl;
     std::cout << "\ttex coords: " << vt.size() << std::endl;
@@ -215,12 +214,12 @@ Factory::~Factory() {
     return texture;
   }
 
-  glm::vec2 Factory::read_vec2(std::vector<std::string> &words)
+  glm::vec2 Factory::read_vec2(std::vector<std::string> words)
   {
     return glm::vec2(std::stof(words[1]), std::stof(words[2]));
   }
   
-  glm::vec3 Factory::read_vec3(std::vector<std::string> &words)
+  glm::vec3 Factory::read_vec3(std::vector<std::string> words)
   {
     return glm::vec3(std::stof(words[1]), std::stof(words[2]), std::stof(words[3]));
   }

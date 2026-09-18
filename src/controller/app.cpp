@@ -69,8 +69,8 @@ void App::set_up_opengl() {
   glCullFace(GL_BACK);
 
   shader = make_shader(
-    "src/shaders/vertex.txt",
-    "src/shaders/fragment.txt"
+    "src/shaders/vertex.glsl",
+    "src/shaders/fragment.glsl"
   );
 
   glUseProgram(shader);
